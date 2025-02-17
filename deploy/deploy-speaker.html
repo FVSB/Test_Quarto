@@ -349,6 +349,16 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 </section>
 <section class="slide level2">
 
+<h3 id="condiciones-de-kkt-para-el-mpec-del-problema-binivel.">Condiciones de KKT para el MPEC del problema binivel.</h3>
+<p><span class="math display">\[
+\begin{matrix}
+\nabla_z F(z_{est}) + \sum_{i=1}^q \mu_i\nabla_z g_i(z_{est}) +\sum_{i=1}^{s} \beta_j\nabla v_j(z_{est}) +\\+\sum_{k=1}^{q_0} \alpha_k\nabla_z[  \nabla_{y} f((z_{est}) +\sum_{j=1}^{s} \nabla_{y} v_j((z_{est}) \lambda_j]&amp;=&amp;0\\ j\in J_v^+ \quad \alpha \nabla_{y} v_j(x, y)&amp;=&amp;0\\ j\in (J_v^+)^c\quad
+\alpha  \nabla_{y} v_j(x, y)-\gamma_j&amp;=&amp;0\end{matrix}
+\]</span> Condiciones de complementariedad</p>
+<p>Condiciones de factibilidad</p>
+</section>
+<section class="slide level2">
+
 <h4 id="para-binivel-reformulado">Para binivel reformulado</h4>
 <ul>
 <li class="fragment"><p><strong>C-Estacionario</strong>:</p></li>
@@ -360,9 +370,6 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 <li class="fragment"><span class="math display">\[\alpha=0  \]</span></li>
 <li class="fragment"><span class="math display">\[\alpha \neq 0\]</span></li>
 </ul>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="resultados" class="title-slide slide level1 center">
@@ -406,23 +413,10 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 </section>
 <section class="slide level2">
 
-<h4 id="pasos-para-la-generación">Pasos para la generación</h4>
-<ol type="1">
-<li class="fragment">Transformaciones:</li>
-</ol>
-<ul>
-<li class="fragment">Restricciones activas del nivel inferior y hacer factibles.</li>
-<li class="fragment">Hallar el kkt del nivel inferior y modificar la función objetivo del nivel inferior.</li>
-<li class="fragment">Garantizar la factibilidad del punto.</li>
-<li class="fragment">Realizar el KKT del MPEC y posteriormente modificar la función objetivo del Líder.</li>
-</ul>
-</section>
-<section class="slide level2">
-
 <h3 id="transformaciones-en-el-nivel-inferior">Transformaciones en el nivel inferior:</h3>
 <ul>
 <li class="fragment"><p>Las restricciones activas : <span class="math display">\[\hat{v_j}=v_{j}(z_{est})+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m).\]</span></p></li>
-<li class="fragment"><p>Garantizar que en el punto en <span class="math inline">\(\hat{v_j}\)</span> es factible. <span class="math display">\[v_{j}^{\star}(x,y)=v_{j}(x,y)+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m)+c_j^v
+<li class="fragment"><p>Garantizar que el punto en <span class="math inline">\(\hat{v_j}\)</span> es factible. <span class="math display">\[v_{j}^{\star}(x,y)=v_{j}(x,y)+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m)+c_j^v
 \]</span></p></li>
 <li class="fragment"><p>Modificar la función objetivo: <span class="math display">\[f^{\star}(x,y)=f(x,y)+\vec{bf}y\]</span></p></li>
 </ul>
@@ -610,7 +604,7 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'h.v',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

@@ -15,8 +15,8 @@ format:
     progress: true
     include-after-body: scripts.js
     navigationMode: "linear" 
-    slide-number: h.v
-    show-slide-number: all
+    #slide-number: h.v
+    #show-slide-number: all
     multiplex: 
      id: bee0529b373465ac
      secret: "17396952050292487494"
@@ -242,9 +242,19 @@ $$
 
 - **M-Estacionario**:
 
-
 - **Fuertemente Estacionario**:
+---
 
+### Condiciones de KKT para el MPEC del problema binivel.
+
+$$
+\begin{matrix}
+ \nabla_z F(z_{est}) + \sum_{i=1}^q \mu_i\nabla_z g_i(z_{est}) +\sum_{i=1}^{s} \beta_j\nabla v_j(z_{est}) +\\+\sum_{k=1}^{q_0} \alpha_k\nabla_z[  \nabla_{y} f((z_{est}) +\sum_{j=1}^{s} \nabla_{y} v_j((z_{est}) \lambda_j]&=&0\\ j\in J_v^+ \quad \alpha \nabla_{y} v_j(x, y)&=&0\\ j\in (J_v^+)^c\quad
+ \alpha  \nabla_{y} v_j(x, y)-\gamma_j&=&0\end{matrix}
+$$
+Condiciones de complementariedad
+
+Condiciones de factibilidad
 ---
 
 #### Para binivel reformulado
@@ -261,7 +271,6 @@ $$
   
 
 
----
 
 # 5. Resultados
 
@@ -291,20 +300,11 @@ $$
 
 --- 
 
-#### Pasos para la generación
-1. Transformaciones:
-  - Restricciones activas del nivel inferior y hacer factibles.
-  - Hallar el kkt del nivel inferior y modificar la función objetivo del nivel inferior.
-  - Garantizar la factibilidad del punto.
-  - Realizar el KKT del MPEC y posteriormente modificar la función objetivo del Líder.
-
----
-
 ### Transformaciones en el nivel inferior:
 - Las restricciones activas : 
 $$\hat{v_j}=v_{j}(z_{est})+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m).$$
 
-- Garantizar que en el punto en  $\hat{v_j}$ es factible.
+- Garantizar que el punto en  $\hat{v_j}$ es factible.
   $$v_{j}^{\star}(x,y)=v_{j}(x,y)+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m)+c_j^v
   $$
 
