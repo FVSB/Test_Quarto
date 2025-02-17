@@ -99,65 +99,13 @@ Reveal.on('fragmentshown', function(event) {
 </script>
 
 
-
-
-
-
----
-
-## Índice
-
-::: {.nonincremental}
-1. Introducción
-2. Objetivos
-3. Marco Teórico
-5. Resultados
-6. Conclusiones y Trabajo Futuro
-:::
-
 ---
 
 # 1. Introducción
-::: {.indicator}
-- **Contexto**: Optimización binivel como herramienta clave en investigación operativa y teoría de juegos.
-- **Problema**: Dificultad inherente en resolver problemas binivel debido a su naturaleza jerárquica y no convexa.
-- **Contribución**: Generador de problemas con puntos estacionarios específicos para evaluar algoritmos MPEC.
-:::
 
 ---
 
-## Principales usos de los problemas binivel en la literatura:
 
-- Mercado Eléctrico (Aussel 2018)
-- Ecoparques industriales (Ramos 2016)
-- Ajuste de hiperparámetros en entrenamiento de redes neuronales (Dempe 2020)
-
----
-
-## Los problemas binivel  son complejos computacionalmente:
-
--  *NP-Hard* (Dempe 2020)
-- *ΣP2-hard* (Cerulli 2016)
-
-
-# 2. Objetivos
-
----
-
-::: {.nonincremental}
-- **Objetivo General**:
-  - Desarrollar un generador de problemas binivel que permita estudiar el comportamiento de algoritmos conocidos.
-:::
-- **Objetivos Específicos**:
-  - Garantizar la factibilidad y estacionariedad en puntos dados.
-  - Evaluar el desempeño de algoritmos en problemas modificados.
-  - Analizar resultados experimentales en problemas lineales, cuadráticos y no convexos.
-
-
-
-# 3. Marco Teórico
-
----
 
 ### Problema de Optimización Binivel
 
@@ -177,16 +125,76 @@ $$
 
 ---
 
-## Donde:
 
-- $x \in R^{n},\; y \in R^{m}$
-- $F(x,y) : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R}$
-  - $g_i(x,y)  : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R} ,$, $i=1,\ldots, q$
-- $f(x,y) : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R},$
-  - $v_j(x,y)  : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R} ,$ $j=1,\ldots, s$
+
+::: {.nonincremental}
+- **Objetivo General**:
+  - Desarrollar un generador de problemas binivel que permita estudiar el comportamiento de algoritmos conocidos.
+:::
+- **Objetivos Específicos**:
+  - Garantizar la factibilidad y estacionariedad en puntos dados.
+  - Evaluar el desempeño de algoritmos en problemas modificados.
+  - Analizar resultados experimentales en problemas lineales, cuadráticos y no convexos.
+
 
 ---
 
+
+## Sumario
+
+::: {.nonincremental}
+1. Introducción
+2. Objetivos
+3. Marco Teórico
+5. Resultados
+6. Conclusiones y Trabajo Futuro
+:::
+
+
+---
+
+
+# 3. Marco Teórico
+
+---
+
+## Principales usos de los problemas binivel en la literatura:
+
+- Mercado Eléctrico (Aussel 2018)
+- Ecoparques industriales (Ramos 2016)
+- Ajuste de hiperparámetros en entrenamiento de machine learning (Dempe 2020)
+
+---
+
+## Los problemas binivel  son complejos computacionalmente:
+
+-  *NP-Hard* (Dempe 2020)
+- *ΣP2-hard* (Cerulli 2016)
+
+
+
+
+
+---
+
+### Problema de Optimización Binivel
+
+El problema general de optimización binivel se define como:
+$$
+\DeclareMathOperator*{\argmin}{argmin} % Define el operador argmin
+\begin{equation}
+\begin{aligned}
+& \min_{x} \; F(x, y) \\
+& \text{sujeto a } \\
+& g_i(x, y)\leq 0,\;i=1,\ldots,q, \\
+& y \in \argmin_{y} \left\{ f(x, y) \mid v_j(x, y)\leq 0,\;j=1,\ldots,q \right\}
+\end{aligned}
+\end{equation}
+$$
+
+
+
+---
 
 ### Transformación KKT
 
@@ -205,9 +213,31 @@ $$
 
 ---
 
+
+---
+
+
+### Programación Matemática con Restricciones de Equilibrio (**MPEC**)
+
+$$
+\begin{equation}
+\begin{aligned}
+\min  &\quad  f(z)  \\
+\text{s.t.} &\quad \begin{matrix} g_i(z)& \leq& 0, &i=1,\ldots,q, \\ h_k(z) &=& 0,&k=1\ldots,m, \\
+ G_j(z) &\geq& 0, & j=1,\ldots,s,& H_j(z) &\geq& 0, & j=1,\ldots,s, \end{matrix}
+\\&G_j(z)^T H_j(z) = 0,\; j=1,\ldots,s. \\
+&\text{Definición de MPEC} \\
+\end{aligned}  
+%\tag{\theequation} 
+\label{eq:DefMpec}
+\end{equation}
+$$
+
+---
+
 ### Tipos de Puntos Estacionarios
 
-
+#### Para MPEC 
 - **C-Estacionario**:
 
 - **M-Estacionario**:
@@ -215,61 +245,20 @@ $$
 
 - **Fuertemente Estacionario**:
 
+---
+
+#### Para binivel reformulado
+
+- **C-Estacionario**:
+
+- **M-Estacionario**:
+
+- **Fuertemente Estacionario**:
+
 ### Valores del Multiplicador   alpha
 - $$\alpha=0  $$
 - $$\alpha \neq 0$$
   
- 
-
----
-
-# 4. Metodología
-
----
-
-### Fases del Proceso
-
-1. Seleccionar del ambiente computacional
-2. Crear un generador de problemas pruebas
-3. Experimentar con problemas prueba
-4. Analizar los resultados
-
----
-
-## Seleccionar un ambiente computacional
-
-- Lenguaje de programación:
-  1. Rápido y eficiente computacionalmente.
-  2. Fácil de utilizar en ambientes matemáticos.
-  3. Bibliotecas para optimización no lineal y binivel.
-
---- 
-
-## Generador del problema
-
-- Entrada:
-  1. Un problema de optimización binivel
-  2. Un punto, el cual se desea que dicho problema sea estacionario
-  3. Elección del tipo de la clase de estacionariedad seleccionada.
-
-- Salida: 
-  1. Problema perturbado donde el punto seleccionado es estacionario de la clase seleccionada
-
----
-
-## Experimentar con problemas prueba
-
-- Selección de problemas con estructura variada 
- 1. Lineales
- 2. Cuadráticos
- 3. No Convexos
-
-- Generación de problemas perturbados en cada clase de estacionariedad 
-
-- Analizar los puntos óptimos que el ambiente computacional halla de cada problema perturbado.
-
-
-
 
 
 ---
@@ -293,6 +282,7 @@ $$
 
 ### Generador de problemas Binivel 
 **Dado**:
+
 - Problema de optimización binivel
   1. Conjunto de índices activos.
 - Punto a requerir a ser estacionario.
@@ -410,6 +400,7 @@ La salida del generador son las funciones:
   - En modelos de aprendizajes automáticos (Dempe 2020).
 
 ---
+
 ## ¿En qué medida considera se cumplieron los objetivos que se plantea el trabajo?
 
 - *Objetivo* : desarrollar un generador

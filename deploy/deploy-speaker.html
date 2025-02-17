@@ -209,51 +209,29 @@ Reveal.on('fragmentshown', function(event) {
 
 </script>
 </section>
-<section id="índice" class="slide level2">
-<h2>Índice</h2>
-<div>
-<ol type="1">
-<li>Introducción</li>
-<li>Objetivos</li>
-<li>Marco Teórico</li>
-<li>Resultados</li>
-<li>Conclusiones y Trabajo Futuro</li>
-</ol>
-</div>
-</section>
 <section class="slide level2">
 
 </section></section>
 <section>
 <section id="introducción" class="title-slide slide level1 center">
 <h1>1. Introducción</h1>
-<div class="indicator">
-<ul>
-<li class="fragment"><strong>Contexto</strong>: Optimización binivel como herramienta clave en investigación operativa y teoría de juegos.</li>
-<li class="fragment"><strong>Problema</strong>: Dificultad inherente en resolver problemas binivel debido a su naturaleza jerárquica y no convexa.</li>
-<li class="fragment"><strong>Contribución</strong>: Generador de problemas con puntos estacionarios específicos para evaluar algoritmos MPEC.</li>
-</ul>
-</div>
-</section>
-<section id="principales-usos-de-los-problemas-binivel-en-la-literatura" class="slide level2">
-<h2>Principales usos de los problemas binivel en la literatura:</h2>
-<ul>
-<li class="fragment">Mercado Eléctrico (Aussel 2018)</li>
-<li class="fragment">Ecoparques industriales (Ramos 2016)</li>
-<li class="fragment">Ajuste de hiperparámetros en entrenamiento de redes neuronales (Dempe 2020)</li>
-</ul>
-</section>
-<section id="los-problemas-binivel-son-complejos-computacionalmente" class="slide level2">
-<h2>Los problemas binivel son complejos computacionalmente:</h2>
-<ul>
-<li class="fragment"><em>NP-Hard</em> (Dempe 2020)</li>
-<li class="fragment"><em>ΣP2-hard</em> (Cerulli 2016)</li>
-</ul>
-</section></section>
-<section>
-<section id="objetivos" class="title-slide slide level1 center">
-<h1>2. Objetivos</h1>
 
+</section>
+<section class="slide level2">
+
+<h3 id="problema-de-optimización-binivel">Problema de Optimización Binivel</h3>
+<p>El problema general de optimización binivel se define como:</p>
+<p><span class="math display">\[
+\DeclareMathOperator*{\argmin}{argmin} % Define el operador argmin
+\begin{equation}
+\begin{aligned}
+&amp; \min_{x} \; F(x, y) \\
+&amp; \text{sujeto a } \\
+&amp; g_i(x, y)\leq 0,\;i=1,\ldots,q, \\
+&amp; y \in \argmin_{y} \left\{ f(x, y) \mid v_j(x, y)\leq 0,\;j=1,\ldots,q \right\}
+\end{aligned}
+\end{equation}
+\]</span></p>
 </section>
 <section class="slide level2">
 
@@ -273,17 +251,46 @@ Reveal.on('fragmentshown', function(event) {
 <li class="fragment">Analizar resultados experimentales en problemas lineales, cuadráticos y no convexos.</li>
 </ul></li>
 </ul>
+</section>
+<section id="sumario" class="slide level2">
+<h2>Sumario</h2>
+<div>
+<ol type="1">
+<li>Introducción</li>
+<li>Objetivos</li>
+<li>Marco Teórico</li>
+<li>Resultados</li>
+<li>Conclusiones y Trabajo Futuro</li>
+</ol>
+</div>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="marco-teórico" class="title-slide slide level1 center">
 <h1>3. Marco Teórico</h1>
 
 </section>
+<section id="principales-usos-de-los-problemas-binivel-en-la-literatura" class="slide level2">
+<h2>Principales usos de los problemas binivel en la literatura:</h2>
+<ul>
+<li class="fragment">Mercado Eléctrico (Aussel 2018)</li>
+<li class="fragment">Ecoparques industriales (Ramos 2016)</li>
+<li class="fragment">Ajuste de hiperparámetros en entrenamiento de machine learning (Dempe 2020)</li>
+</ul>
+</section>
+<section id="los-problemas-binivel-son-complejos-computacionalmente" class="slide level2">
+<h2>Los problemas binivel son complejos computacionalmente:</h2>
+<ul>
+<li class="fragment"><em>NP-Hard</em> (Dempe 2020)</li>
+<li class="fragment"><em>ΣP2-hard</em> (Cerulli 2016)</li>
+</ul>
+</section>
 <section class="slide level2">
 
-<h3 id="problema-de-optimización-binivel">Problema de Optimización Binivel</h3>
-<p>El problema general de optimización binivel se define como:</p>
-<p><span class="math display">\[
+<h3 id="problema-de-optimización-binivel-1">Problema de Optimización Binivel</h3>
+<p>El problema general de optimización binivel se define como: <span class="math display">\[
 \DeclareMathOperator*{\argmin}{argmin} % Define el operador argmin
 \begin{equation}
 \begin{aligned}
@@ -294,20 +301,6 @@ Reveal.on('fragmentshown', function(event) {
 \end{aligned}
 \end{equation}
 \]</span></p>
-</section>
-<section id="donde" class="slide level2">
-<h2>Donde:</h2>
-<ul>
-<li class="fragment"><span class="math inline">\(x \in R^{n},\; y \in R^{m}\)</span></li>
-<li class="fragment"><span class="math inline">\(F(x,y) : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R}\)</span>
-<ul>
-<li class="fragment"><span class="math inline">\(g_i(x,y)  : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R} ,\)</span>, <span class="math inline">\(i=1,\ldots, q\)</span></li>
-</ul></li>
-<li class="fragment"><span class="math inline">\(f(x,y) : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R},\)</span>
-<ul>
-<li class="fragment"><span class="math inline">\(v_j(x,y)  : \mathbb{R}^{n} \times \mathbb{R}^{m} \to \mathbb{R} ,\)</span> <span class="math inline">\(j=1,\ldots, s\)</span></li>
-</ul></li>
-</ul>
 </section>
 <section class="slide level2">
 
@@ -326,7 +319,37 @@ Reveal.on('fragmentshown', function(event) {
 </section>
 <section class="slide level2">
 
+</section>
+<section class="slide level2">
+
+<h3 id="programación-matemática-con-restricciones-de-equilibrio-mpec">Programación Matemática con Restricciones de Equilibrio (<strong>MPEC</strong>)</h3>
+<p><span class="math display">\[
+\begin{equation}
+\begin{aligned}
+\min  &amp;\quad  f(z)  \\
+\text{s.t.} &amp;\quad \begin{matrix} g_i(z)&amp; \leq&amp; 0, &amp;i=1,\ldots,q, \\ h_k(z) &amp;=&amp; 0,&amp;k=1\ldots,m, \\
+G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s, \end{matrix}
+\\&amp;G_j(z)^T H_j(z) = 0,\; j=1,\ldots,s. \\
+&amp;\text{Definición de MPEC} \\
+\end{aligned}  
+%\tag{\theequation}
+\label{eq:DefMpec}
+\end{equation}
+\]</span></p>
+</section>
+<section class="slide level2">
+
 <h3 id="tipos-de-puntos-estacionarios">Tipos de Puntos Estacionarios</h3>
+<h4 id="para-mpec">Para MPEC</h4>
+<ul>
+<li class="fragment"><p><strong>C-Estacionario</strong>:</p></li>
+<li class="fragment"><p><strong>M-Estacionario</strong>:</p></li>
+<li class="fragment"><p><strong>Fuertemente Estacionario</strong>:</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="para-binivel-reformulado">Para binivel reformulado</h4>
 <ul>
 <li class="fragment"><p><strong>C-Estacionario</strong>:</p></li>
 <li class="fragment"><p><strong>M-Estacionario</strong>:</p></li>
@@ -336,65 +359,6 @@ Reveal.on('fragmentshown', function(event) {
 <ul>
 <li class="fragment"><span class="math display">\[\alpha=0  \]</span></li>
 <li class="fragment"><span class="math display">\[\alpha \neq 0\]</span></li>
-</ul>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="metodología" class="title-slide slide level1 center">
-<h1>4. Metodología</h1>
-
-</section>
-<section class="slide level2">
-
-<h3 id="fases-del-proceso">Fases del Proceso</h3>
-<ol type="1">
-<li class="fragment">Seleccionar del ambiente computacional</li>
-<li class="fragment">Crear un generador de problemas pruebas</li>
-<li class="fragment">Experimentar con problemas prueba</li>
-<li class="fragment">Analizar los resultados</li>
-</ol>
-</section>
-<section id="seleccionar-un-ambiente-computacional" class="slide level2">
-<h2>Seleccionar un ambiente computacional</h2>
-<ul>
-<li class="fragment">Lenguaje de programación:
-<ol type="1">
-<li class="fragment">Rápido y eficiente computacionalmente.</li>
-<li class="fragment">Fácil de utilizar en ambientes matemáticos.</li>
-<li class="fragment">Bibliotecas para optimización no lineal y binivel.</li>
-</ol></li>
-</ul>
-</section>
-<section id="generador-del-problema" class="slide level2">
-<h2>Generador del problema</h2>
-<ul>
-<li class="fragment">Entrada:
-<ol type="1">
-<li class="fragment">Un problema de optimización binivel</li>
-<li class="fragment">Un punto, el cual se desea que dicho problema sea estacionario</li>
-<li class="fragment">Elección del tipo de la clase de estacionariedad seleccionada.</li>
-</ol></li>
-<li class="fragment">Salida:
-<ol type="1">
-<li class="fragment">Problema perturbado donde el punto seleccionado es estacionario de la clase seleccionada</li>
-</ol></li>
-</ul>
-</section>
-<section id="experimentar-con-problemas-prueba" class="slide level2">
-<h2>Experimentar con problemas prueba</h2>
-<ul>
-<li class="fragment">Selección de problemas con estructura variada</li>
-</ul>
-<ol type="1">
-<li class="fragment">Lineales</li>
-<li class="fragment">Cuadráticos</li>
-<li class="fragment">No Convexos</li>
-</ol>
-<ul>
-<li class="fragment"><p>Generación de problemas perturbados en cada clase de estacionariedad</p></li>
-<li class="fragment"><p>Analizar los puntos óptimos que el ambiente computacional halla de cada problema perturbado.</p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -428,7 +392,17 @@ Reveal.on('fragmentshown', function(event) {
 <section class="slide level2">
 
 <h3 id="generador-de-problemas-binivel">Generador de problemas Binivel</h3>
-<p><strong>Dado</strong>: - Problema de optimización binivel 1. Conjunto de índices activos. - Punto a requerir a ser estacionario. 1. Conocer el tipo de estacionariedad requerida.</p>
+<p><strong>Dado</strong>:</p>
+<ul>
+<li class="fragment">Problema de optimización binivel
+<ol type="1">
+<li class="fragment">Conjunto de índices activos.</li>
+</ol></li>
+<li class="fragment">Punto a requerir a ser estacionario.
+<ol type="1">
+<li class="fragment">Conocer el tipo de estacionariedad requerida.</li>
+</ol></li>
+</ul>
 </section>
 <section class="slide level2">
 
@@ -474,7 +448,7 @@ Reveal.on('fragmentshown', function(event) {
 </section>
 <section class="slide level2">
 
-<h3 id="experimentar-con-problemas-prueba-1">Experimentar con problemas prueba</h3>
+<h3 id="experimentar-con-problemas-prueba">Experimentar con problemas prueba</h3>
 <ol type="1">
 <li class="fragment">Seleccionar 5 problemas de cada tipo:
 <ul>
@@ -524,18 +498,6 @@ Reveal.on('fragmentshown', function(event) {
 <h1>6.Oponencia</h1>
 
 </section>
-<section id="comente-un-poco-acerca-de-los-resultados-obtenidos-su-alcance-e-importancia." class="slide level2">
-<h2>Comente un poco acerca de los resultados obtenidos, su alcance e importancia.</h2>
-<ul>
-<li class="fragment">Un caso en el vector de multiplicadores asociados al Langragiano <span class="math inline">\(=0\)</span>.</li>
-<li class="fragment">Puntos críticos no sean aislados.</li>
-<li class="fragment">Garantías convergencia de puntos C-Estacionarios.
-<ul>
-<li class="fragment">Algoritmos de suavización</li>
-<li class="fragment">Genera problemas puntos conocidos a los cuales converga</li>
-</ul></li>
-</ul>
-</section>
 <section id="en-qué-zonas-considera-debe-intensificarse-la-experimentación-para-arribar-a-resultados-más-concluyentes" class="slide level2">
 <h2>¿En qué zonas considera debe intensificarse la experimentación para arribar a resultados más concluyentes?</h2>
 </section>
@@ -545,7 +507,7 @@ Reveal.on('fragmentshown', function(event) {
 <ul>
 <li class="fragment">Lineales y Cuadráticos.
 <ol type="1">
-<li class="fragment"><p>Crear matrices aleatorias.</p>
+<li class="fragment">Crear matrices aleatorias.
 <ol type="1">
 <li class="fragment">Hilbert.</li>
 <li class="fragment">Rango Completo.</li>
@@ -563,11 +525,30 @@ Reveal.on('fragmentshown', function(event) {
 <ul>
 <li class="fragment">No lineales paper de mercados eléctricos de modelo que se esta en desarrollo, que tiene restricciones cuadráticas.</li>
 </ul></li>
-<li class="fragment">En modelos de aprendizajes automaticop dempe 2020.</li>
+<li class="fragment">En modelos de aprendizajes automáticos (Dempe 2020).</li>
 </ul>
 </section>
 <section id="en-qué-medida-considera-se-cumplieron-los-objetivos-que-se-plantea-el-trabajo" class="slide level2">
 <h2>¿En qué medida considera se cumplieron los objetivos que se plantea el trabajo?</h2>
+<ul>
+<li class="fragment"><em>Objetivo</em> : desarrollar un generador de problemas que, dado un punto y las funciones que definen un problema de dos niveles, agregarles funciones polinomiales de primer o segundo grado de forma tal que el punto inicial dado sea un punto crítico del problema creado.</li>
+</ul>
+</section>
+<section id="comente-un-poco-acerca-de-los-resultados-obtenidos-su-alcance-e-importancia." class="slide level2">
+<h2>Comente un poco acerca de los resultados obtenidos, su alcance e importancia.</h2>
+<ul>
+<li class="fragment">Un caso en el vector de multiplicadores asociados al Langragiano <span class="math inline">\(=0\)</span>.</li>
+<li class="fragment">Puntos críticos no sean aislados.</li>
+<li class="fragment">Garantías convergencia de puntos C-Estacionarios.
+<ul>
+<li class="fragment">Algoritmos de suavización</li>
+<li class="fragment">Genera problemas puntos conocidos a los cuales converga</li>
+</ul></li>
+<li class="fragment">Poner los graficos de los C, M, Fuerte y alpha explicar</li>
+</ul>
+</section>
+<section class="slide level2">
+
 
 </section></section>
     </div>
