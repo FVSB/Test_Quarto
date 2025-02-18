@@ -255,36 +255,33 @@ Reveal.on('fragmentshown', function(event) {
 <section id="sumario" class="slide level2">
 <h2>Sumario</h2>
 <div>
-<ol type="1">
-<li>Introducción</li>
-<li>Objetivos</li>
+<ol start="2" type="1">
 <li>Marco Teórico</li>
 <li>Resultados</li>
-<li>Conclusiones y Trabajo Futuro</li>
+<li>Conclusiones</li>
+<li>Trabajo Futuro</li>
+<li>Oponencia</li>
 </ol>
 </div>
-</section>
-<section class="slide level2">
-
 </section></section>
 <section>
 <section id="marco-teórico" class="title-slide slide level1 center">
-<h1>3. Marco Teórico</h1>
+<h1>2. Marco Teórico</h1>
 
 </section>
 <section id="principales-usos-de-los-problemas-binivel-en-la-literatura" class="slide level2">
 <h2>Principales usos de los problemas binivel en la literatura:</h2>
 <ul>
-<li class="fragment">Mercado Eléctrico (Aussel 2018)</li>
-<li class="fragment">Ecoparques industriales (Ramos 2016)</li>
-<li class="fragment">Ajuste de hiperparámetros en entrenamiento de machine learning (Dempe 2020)</li>
+<li class="fragment">Mercado Eléctrico (Aussel 2017, Taylor and Francis)</li>
+<li class="fragment">Ecoparques industriales (Ramos 2016, Comput. Chem. Eng.)</li>
+<li class="fragment">Ajuste de hiperparámetros en entrenamiento de machine learning (Okuno, T 2020, Springer)</li>
 </ul>
 </section>
 <section id="los-problemas-binivel-son-complejos-computacionalmente" class="slide level2">
 <h2>Los problemas binivel son complejos computacionalmente:</h2>
 <ul>
-<li class="fragment"><em>NP-Hard</em> (Dempe 2020)</li>
-<li class="fragment"><em>ΣP2-hard</em> (Cerulli 2016)</li>
+<li class="fragment"><em>NP-Hard</em> (Dempe 2020, Springer)</li>
+<li class="fragment"><em>ΣP2-hard</em> (Cerulli 2021, Hal)</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -333,7 +330,6 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 &amp;\text{Definición de MPEC} \\
 \end{aligned}  
 %\tag{\theequation}
-\label{eq:DefMpec}
 \end{equation}
 \]</span></p>
 </section>
@@ -344,21 +340,17 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 <ul>
 <li class="fragment"><p><strong>C-Estacionario</strong>:</p></li>
 <li class="fragment"><p><strong>M-Estacionario</strong>:</p></li>
-<li class="fragment"><p><strong>Fuertemente Estacionario</strong>:</p></li>
+<li class="fragment"><h2 id="fuertemente-estacionario"><strong>Fuertemente Estacionario</strong>:</h2></li>
 </ul>
-</section>
-<section class="slide level2">
-
 <h3 id="condiciones-de-kkt-para-el-mpec-del-problema-binivel.">Condiciones de KKT para el MPEC del problema binivel.</h3>
 <p><span class="math display">\[
 \begin{matrix}
 \nabla_z F(z_{est}) + \sum_{i=1}^q \mu_i\nabla_z g_i(z_{est}) +\sum_{i=1}^{s} \beta_j\nabla v_j(z_{est}) +\\+\sum_{k=1}^{q_0} \alpha_k\nabla_z[  \nabla_{y} f((z_{est}) +\sum_{j=1}^{s} \nabla_{y} v_j((z_{est}) \lambda_j]&amp;=&amp;0\\ j\in J_v^+ \quad \alpha \nabla_{y} v_j(x, y)&amp;=&amp;0\\ j\in (J_v^+)^c\quad
 \alpha  \nabla_{y} v_j(x, y)-\gamma_j&amp;=&amp;0\end{matrix}
 \]</span> Condiciones de complementariedad</p>
-<p>Condiciones de factibilidad</p>
 </section>
-<section class="slide level2">
-
+<section id="condiciones-de-factibilidad" class="slide level2">
+<h2>Condiciones de factibilidad</h2>
 <h4 id="para-binivel-reformulado">Para binivel reformulado</h4>
 <ul>
 <li class="fragment"><p><strong>C-Estacionario</strong>:</p></li>
@@ -373,7 +365,7 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 </section></section>
 <section>
 <section id="resultados" class="title-slide slide level1 center">
-<h1>5. Resultados</h1>
+<h1>3. Resultados</h1>
 
 </section>
 <section class="slide level2">
@@ -415,18 +407,24 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 
 <h3 id="transformaciones-en-el-nivel-inferior">Transformaciones en el nivel inferior:</h3>
 <ul>
-<li class="fragment"><p>Las restricciones activas : <span class="math display">\[\hat{v_j}=v_{j}(z_{est})+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m).\]</span></p></li>
-<li class="fragment"><p>Garantizar que el punto en <span class="math inline">\(\hat{v_j}\)</span> es factible. <span class="math display">\[v_{j}^{\star}(x,y)=v_{j}(x,y)+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m)+c_j^v
+<li class="fragment"><p>Las restricciones activas : <span class="math display">\[\hat{v_j}=v_{j}(z_{est})+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m).\left\{\begin{matrix}j\in J_v^+ \quad \alpha \nabla_{y} v_j(x, y)&amp;=&amp;0\\ j\in (J_v^+)^c\quad
+\alpha  \nabla_{y} v_j(x, y)-\gamma_j&amp;=&amp;0
+\end{matrix}  \right.\]</span></p>
+<ul>
+<li class="fragment">Para <span class="math inline">\(\alpha \neq 0\)</span></li>
+</ul></li>
+<li class="fragment"><p>Garantizar que el punto en <span class="math inline">\(\hat{v_j}\)</span> es factible. <span class="math display">\[v_{j}^{\star}(x,y)=v_{j}(x,y)+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m)+c_j^v   \left\{\begin{matrix}j\in J_v^+ \\ j\in J_v^0\\j\in J_l^+
+\end{matrix}  \right.
 \]</span></p></li>
-<li class="fragment"><p>Modificar la función objetivo: <span class="math display">\[f^{\star}(x,y)=f(x,y)+\vec{bf}y\]</span></p></li>
+<li class="fragment"><p>Modificar la función objetivo: <span class="math display">\[f^{\star}(x,y)=f(x,y)+\vec{bf}y \text{  KKT nivel inferior}\]</span></p></li>
 </ul>
 </section>
 <section class="slide level2">
 
 <h3 id="transformaciones-en-el-nivel-superior.">Transformaciones en el nivel superior.</h3>
 <ul>
-<li class="fragment"><p>Garantizar que el punto es factible en <span class="math inline">\(g_{i}\)</span>: <span class="math display">\[g_{i}^{\star}(x,y)=g_{i}(x,y)+c_i^g,\]</span></p></li>
-<li class="fragment"><p>Modificar la función objetivo: <span class="math display">\[F^{\star}(x,y)=F(x,y)+\vec{BF}(x,y)^T.\]</span></p></li>
+<li class="fragment"><p>Garantizar que el punto es factible en <span class="math inline">\(g_{i}\)</span>: <span class="math display">\[g_{i}^{\star}(x,y)=g_{i}(x,y)+c_i^g\]</span></p></li>
+<li class="fragment"><p>Modificar la función objetivo: <span class="math display">\[F^{\star}(x,y)=F(x,y)+\vec{BF}(x,y)^T\]</span></p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -488,8 +486,47 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 </ul>
 </section></section>
 <section>
+<section id="resultados-1" class="title-slide slide level1 center">
+<h1>3. Resultados:</h1>
+
+</section>
+<section id="problemas-cuadráticos" class="slide level2">
+<h2>Problemas cuadráticos:</h2>
+<ul>
+<li class="fragment"><p>Punto estacionario inicial menos complejo.</p></li>
+<li class="fragment"><p>Similitud entre ProductMode y SOS1.</p></li>
+<li class="fragment"><p>Dificultades de Big-M.</p></li>
+</ul>
+</section></section>
+<section id="conclusiones" class="title-slide slide level1 center">
+<h1>4. Conclusiones</h1>
+<ul>
+<li class="fragment"><p>Generador de Problemas</p></li>
+<li class="fragment"><p>Experimentación preliminar</p>
+<ul>
+<li class="fragment">Problemas no solubles.</li>
+<li class="fragment">Similitud entre ProductMode y SOS1.</li>
+<li class="fragment">Punto estacionario inicial menos complejo.</li>
+<li class="fragment">Dificultad de los algoritmos en los problemas No Convexos.</li>
+</ul></li>
+</ul>
+</section>
+
+<section id="recomendaciones" class="title-slide slide level1 center">
+<h1>5. Recomendaciones</h1>
+<ul>
+<li class="fragment">Ampliar la experimentación:
+<ul>
+<li class="fragment">Clases de problemas</li>
+<li class="fragment">Métodos de solución</li>
+</ul></li>
+<li class="fragment">Perfeccionar interfaz gráfica.</li>
+</ul>
+</section>
+
+<section>
 <section id="oponencia" class="title-slide slide level1 center">
-<h1>6.Oponencia</h1>
+<h1>6. Oponencia</h1>
 
 </section>
 <section id="en-qué-zonas-considera-debe-intensificarse-la-experimentación-para-arribar-a-resultados-más-concluyentes" class="slide level2">
@@ -513,14 +550,32 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 <section class="slide level2">
 
 <h3 id="casos-particulares-de-interés-como">Casos particulares de interés como:</h3>
-<ul>
-<li class="fragment">Eco Parques Industriales .</li>
-<li class="fragment">Mercados eléctricos de “pay-as-bid”.
-<ul>
-<li class="fragment">No lineales paper de mercados eléctricos de modelo que se esta en desarrollo, que tiene restricciones cuadráticas.</li>
-</ul></li>
-<li class="fragment">En modelos de aprendizajes automáticos (Dempe 2020).</li>
-</ul>
+</section>
+<section class="slide level2">
+
+<h4 id="eco-parques-industriales-.">Eco Parques Industriales .</h4>
+
+<img data-src="EPI.svg" class="r-stretch quarto-figure-center"><p class="caption">Diagrama Eco-Parque-Industrial</p></section>
+<section class="slide level2">
+
+<h4 id="mercados-eléctricos-de-pay-as-bid.">Mercados eléctricos de “pay-as-bid”.</h4>
+
+<img data-src="ElectricPaid_as_bid.drawio.svg" class="r-stretch quarto-figure-center"><p class="caption">Diagrama Mercado Eléctrico pay-as-bid</p></section>
+<section class="slide level2">
+
+<h4 id="en-modelos-de-aprendizajes-automáticos-dempe-2020.">En modelos de aprendizajes automáticos (Dempe 2020).</h4>
+
+<img data-src="mlbilevel.png" class="r-stretch quarto-figure-center"><p class="caption">En apredizaje automático</p></section>
+<section class="slide level2">
+
+<p><span class="math display">\[
+\min_{w_{\lambda}, \lambda} g_{val}(w_{\lambda})
+\]</span></p>
+<p><span class="math display">\[
+\text{s.t. } w_{\lambda} \in \arg\min_{w \in \mathcal{C}}
+\left\{ g_{tr}(w) + \sum_{i=1}^{r} \lambda_i R_i(w) \right\},
+\quad \lambda \geq 0.
+\]</span></p>
 </section>
 <section id="en-qué-medida-considera-se-cumplieron-los-objetivos-que-se-plantea-el-trabajo" class="slide level2">
 <h2>¿En qué medida considera se cumplieron los objetivos que se plantea el trabajo?</h2>
@@ -531,18 +586,15 @@ G_j(z) &amp;\geq&amp; 0, &amp; j=1,\ldots,s,&amp; H_j(z) &amp;\geq&amp; 0, &amp;
 <section id="comente-un-poco-acerca-de-los-resultados-obtenidos-su-alcance-e-importancia." class="slide level2">
 <h2>Comente un poco acerca de los resultados obtenidos, su alcance e importancia.</h2>
 <ul>
-<li class="fragment">Un caso en el vector de multiplicadores asociados al Langragiano <span class="math inline">\(=0\)</span>.</li>
-<li class="fragment">Puntos críticos no sean aislados.</li>
-<li class="fragment">Garantías convergencia de puntos C-Estacionarios.
+<li class="fragment"><p>Un caso en el vector de multiplicadores asociados al Langragiano <span class="math inline">\(=0\)</span>.</p></li>
+<li class="fragment"><p>Puntos críticos no sean aislados.</p></li>
+<li class="fragment"><p>Garantías convergencia de puntos C-Estacionarios.</p>
 <ul>
 <li class="fragment">Algoritmos de suavización</li>
 <li class="fragment">Genera problemas puntos conocidos a los cuales converga</li>
 </ul></li>
-<li class="fragment">Poner los graficos de los C, M, Fuerte y alpha explicar</li>
+<li class="fragment"><h2 id="poner-los-graficos-de-los-c-m-fuerte-y-alpha-explicar">Poner los graficos de los C, M, Fuerte y alpha explicar</h2></li>
 </ul>
-</section>
-<section class="slide level2">
-
 
 </section></section>
     </div>
