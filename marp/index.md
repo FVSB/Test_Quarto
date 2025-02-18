@@ -199,9 +199,9 @@ $$
 **Dado**:
 
 -   Problema de optimización binivel
-    1.  Conjunto de índices activos.
+    - Conjunto de índices activos.
 -   Punto a requerir a ser estacionario.
-    1.  Conocer el tipo de estacionariedad requerida.
+    -  Conocer el tipo de estacionariedad requerida.
 
 ------------------------------------------------------------------------
 
@@ -225,6 +225,7 @@ $$
 
 -   Modificar la función objetivo: 
 $$f^{\star}(x,y)=f(x,y)+\vec{bf}y$$
+
                                  KKT nivel inferior
 
 ------------------------------------------------------------------------
@@ -291,6 +292,8 @@ La salida del generador son las funciones:
 ---
 # 3. Resultados:
 
+---
+
 ## Problemas cuadráticos:
 
 -   Punto estacionario inicial menos complejo.
@@ -306,6 +309,7 @@ La salida del generador son las funciones:
 
 - Experimentación preliminar 
     - Problemas no solubles.
+    - Product_Mode mayor tendencia a terminar puntos infactibles (11 Lineales).
     - Similitud entre ProductMode y SOS1.
     - Punto estacionario inicial menos complejo.
     - Dificultad de los algoritmos en los problemas No Convexos.
@@ -320,69 +324,11 @@ La salida del generador son las funciones:
 - Perfeccionar interfaz gráfica.
 ---
 # 6. Oponencia
+---
 
+## Comente un poco acerca de los resultados obtenidos, su alcance e importancia. ¿En qué zonas considera debe intensificarse la experimentación para arribar a resultados más concluyentes?
 ------------------------------------------------------------------------
 
-## ¿En qué zonas considera debe intensificarse la experimentación para arribar a resultados más concluyentes?
-
-------------------------------------------------------------------------
-
-### Aumentar las dimensiones de los problemas.
-
--   Lineales y Cuadráticos.
-    1.  Crear matrices aleatorias.
-        1.  Hilbert.
-        2.  Rango Completo.
-        3.  Semidefinida positiva.
-
-------------------------------------------------------------------------
-
-### Casos particulares de interés como:
-
----
-
-####   Eco Parques Industriales .
-
-
-
-![Diagrama Eco-Parque-Industrial](EPI.svg)
-
----
-
-####   Mercados eléctricos de "pay-as-bid":
-
-
-![Diagrama Mercado Eléctrico pay-as-bid](ElectricPaid_as_bid.drawio.svg)
-
-
----
-
-
-#### En modelos de aprendizajes automáticos (Dempe 2020):
-
-
-![En apredizaje automático](mlbilevel.png)
-
----
-
-### Modelo propuesto:
-
-$$
-\min_{w_{\lambda}, \lambda} g_{val}(w_{\lambda})
-$$
-
-$$
-\text{s.t. } w_{\lambda} \in \arg\min_{w \in \mathcal{C}} 
-\left\{ g_{tr}(w) + \sum_{i=1}^{r} \lambda_i R_i(w) \right\},
-\quad \lambda \geq 0.
-$$
-
-------------------------------------------------------------------------
-
-## ¿En qué medida considera se cumplieron los objetivos que se plantea el trabajo?
-
--   *Objetivo* : Desarrollar un generador de problemas que, dado un punto y las funciones que definen un problema de dos niveles, agregarles funciones polinomiales de primer o segundo grado de forma tal que el punto inicial dado sea un punto crítico del problema creado.
----
 ## Comente un poco acerca de los resultados obtenidos, su alcance e importancia.
 
 -   Un caso en el vector de multiplicadores asociados al Langragiano $=0$.
@@ -413,3 +359,74 @@ $$
 #### Fuertemente-Estacionarios
 <!-- _class: centered-image -->
 ![Comportamiento de los puntos Fuertemente-Estacionarios](f_estacionario.png)
+
+---
+
+##  ¿En qué zonas considera debe intensificarse la experimentación para arribar a resultados más concluyentes?
+
+------------------------------------------------------------------------
+
+### Aumentar las dimensiones de los problemas.
+
+-   Lineales y Cuadráticos.
+    1.  Crear matrices aleatorias.
+        1.  Hilbert.
+        2.  Rango Completo.
+        3.  Semidefinida positiva.
+
+------------------------------------------------------------------------
+
+### Casos particulares de interés como:
+
+---
+
+####   Eco Parques Industriales (Ramos 2016, Comput. Chem. Eng.)  .
+
+
+
+![Diagrama Eco-Parque-Industrial](EPI.svg)
+
+---
+
+####   Mercados eléctricos de "pay-as-bid" (Aussel 2017, Taylor and Francis):
+
+
+![Diagrama Mercado Eléctrico pay-as-bid](ElectricPaid_as_bid.drawio.svg)
+
+
+---
+
+
+#### En modelos de aprendizajes automáticos (Okuno, T 2020, Springer):
+
+
+![En apredizaje automático](mlbilevel.png)
+
+---
+
+### Modelo propuesto:
+
+$$
+\min_{w_{\lambda}, \lambda} g_{val}(w_{\lambda})
+$$
+
+$$
+\text{s.t. } w_{\lambda} \in \arg\min_{w \in \mathcal{C}} 
+\left\{ g_{tr}(w) + \sum_{i=1}^{r} \lambda_i R_i(w) \right\},
+\quad \lambda \geq 0.
+$$
+
+----------------------------------------------------
+
+
+## Pregunta 2: ¿En qué medida considera se cumplieron los objetivos que se plantea el trabajo?
+
+
+---
+   ## Objetivo:
+
+Desarrollar un generador de problemas que, dado un punto y las funciones que definen un problema de dos niveles, agregarles funciones polinomiales de primer o segundo grado de forma tal que el punto inicial dado sea un punto crítico del problema creado.
+
+
+
+
