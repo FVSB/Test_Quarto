@@ -1,114 +1,14 @@
 ---
-#title: "Defensa de la tesis \n Universidad de la Habana"
-
-#author: Francisco Vicente Suárez Bellón
-image: true
-     
-title-slide-attributes:
-  data-background-image: 'https://marp.app/assets/hero-background.jpg'
-  data-background-size: cover
-  data-background-opacity: 0,8
-  data-text-align: center
-css: styles.css
-format:
-  revealjs:
-    progress: true
-    include-after-body: scripts.js
-    navigationMode: "linear" 
-    #slide-number: h.v
-    #show-slide-number: all
-    multiplex: 
-     id: bee0529b373465ac
-     secret: "17396952050292487494"
-    theme: sky
-    css:  [styles.css]
-    raw-html: true   # <-- Habilita la renderización de HTML sin escape
-    incremental: true  
-    header: "Universidad de La Habana - Facultad de Matemática y Computación"
-    footer: "Francisco Vicente Suárez Bellón | Tesis de Licenciatura en Ciencia de la Computación"
+marp: true
+theme: default
+author: Francisco Vicente Suárez Bellón
+transition: drop
+paginate: true
+lang: es
+header: "Universidad de La Habana - Facultad de Matemática y Computación"
+footer: "Francisco Vicente Suárez Bellón | Tesis de Licenciatura en Ciencia de la Computación"
+backgroundImage: url('https://marp.app/assets/hero-background.jpg')
 ---
-
-# 
-
-<!-- Slide Personalizado -->
-
-::::: custom-title-slide
-::: logo
-<img src="https://github.com/FVSB/test_backUp/blob/main/Uh_Logo.png?raw=true" alt="Logo Universidad" style="width: 150px;"/>
-:::
-
-::: content
-<h2>Facultad de Matemática y Computación</h2>
-
-<p><strong>Autor:</strong> Francisco Vicente Suárez Bellón</p>
-
-<p><strong>Tutor:</strong> Dr. C. Gemayqzel Bouza Allende</p>
-
-<p><strong>Tesis de Licenciatura en Ciencias de la Computación</strong></p>
-:::
-:::::
-
-```{=html}
-<script> 
-Reveal.on('fragmentshown', function(event) {
-    let customSlide = event.currentSlide.querySelector('.custom-title-slide');
-
-    if (customSlide) {
-        let visibleFragments = customSlide.querySelectorAll('.fragment.visible');
-        
-        // Si hay al menos 2 elementos mostrados, elimina el anterior del DOM
-        if (visibleFragments.length > 1) {
-            let previousElement = visibleFragments[visibleFragments.length - 2];
-            previousElement.remove(); // Elimina completamente el elemento del DOM
-        }
-    }
-});
-
-
-</script>
-```
-
-# 
-
-<!-- Slide Personalizado -->
-
-::::: custom-title-slide
-::: logo
-<img src="https://github.com/FVSB/test_backUp/blob/main/Uh_Logo.png?raw=true" alt="Logo Universidad" style="width: 150px;"/>
-:::
-
-::: content
-<h2>Un generador de problemas prueba para evaluar<br> la calidad de la solución de los algoritmos<br> de problemas de optimización de dos niveles</h2>
-
-<p><strong>Autor:</strong> Francisco Vicente Suárez Bellón</p>
-
-<p><strong>Tutor:</strong> Dr. C. Gemayqzel Bouza Allende</p>
-
-<p><strong>Tesis de Licenciatura en Ciencias de la Computación</strong></p>
-:::
-:::::
-
-```{=html}
-<script> 
-Reveal.on('fragmentshown', function(event) {
-    let customSlide = event.currentSlide.querySelector('.custom-title-slide');
-
-    if (customSlide) {
-        let visibleFragments = customSlide.querySelectorAll('.fragment.visible');
-        
-        // Si hay al menos 2 elementos mostrados, elimina el anterior del DOM
-        if (visibleFragments.length > 1) {
-            let previousElement = visibleFragments[visibleFragments.length - 2];
-            previousElement.remove(); // Elimina completamente el elemento del DOM
-        }
-    }
-});
-
-
-</script>
-```
-
-------------------------------------------------------------------------
 
 # 1. Introducción
 
@@ -132,10 +32,9 @@ $$
 
 ------------------------------------------------------------------------
 
-::: nonincremental
 -   **Objetivo General**:
     -   Desarrollar un generador de problemas binivel que permita estudiar el comportamiento de algoritmos conocidos.
-:::
+
 
 -   **Objetivos Específicos**:
     -   Garantizar la factibilidad y estacionariedad en puntos dados.
@@ -146,13 +45,13 @@ $$
 
 ## Sumario
 
-::: nonincremental
-2.  Marco Teórico
+
+1.  Marco Teórico
 3.  Resultados
 4.  Conclusiones
 5.  Trabajo Futuro
 6.  Oponencia
-:::
+
 
 
 
@@ -177,7 +76,8 @@ $$
 
 ### Problema de Optimización Binivel
 
-El problema general de optimización binivel se define como: $$
+El problema general de optimización binivel se define como: 
+$$
 \DeclareMathOperator*{\argmin}{argmin} % Define el operador argmin
 \begin{equation}
 \begin{aligned}
@@ -208,8 +108,6 @@ $$
 
 ------------------------------------------------------------------------
 
-------------------------------------------------------------------------
-
 ### Programación Matemática con Restricciones de Equilibrio (**MPEC**)
 
 $$
@@ -235,18 +133,18 @@ $$
 
 -   **M-Estacionario**:
 
--   
-
-    ## **Fuertemente Estacionario**:
-
+-   **Fuertemente Estacionario**:
+---
 ### Condiciones de KKT para el MPEC del problema binivel.
 
 $$
 \begin{matrix}
  \nabla_z F(z_{est}) + \sum_{i=1}^q \mu_i\nabla_z g_i(z_{est}) +\sum_{i=1}^{s} \beta_j\nabla v_j(z_{est}) +\\+\sum_{k=1}^{q_0} \alpha_k\nabla_z[  \nabla_{y} f((z_{est}) +\sum_{j=1}^{s} \nabla_{y} v_j((z_{est}) \lambda_j]&=&0\\ j\in J_v^+ \quad \alpha \nabla_{y} v_j(x, y)&=&0\\ j\in (J_v^+)^c\quad
  \alpha  \nabla_{y} v_j(x, y)-\gamma_j&=&0\end{matrix}
-$$ Condiciones de complementariedad
+$$ 
 
+## Condiciones de complementariedad
+---
 ## Condiciones de factibilidad
 
 #### Para binivel reformulado
@@ -261,7 +159,7 @@ $$ Condiciones de complementariedad
 
 -   $$\alpha=0  $$
 -   $$\alpha \neq 0$$
-
+---
 # 3. Resultados
 
 ------------------------------------------------------------------------
@@ -292,25 +190,39 @@ $$ Condiciones de complementariedad
 
 ### Transformaciones en el nivel inferior:
 
--   Las restricciones activas : $$\hat{v_j}=v_{j}(z_{est})+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m).\left\{\begin{matrix}j\in J_v^+ \quad \alpha \nabla_{y} v_j(x, y)&=&0\\ j\in (J_v^+)^c\quad
+-   Las restricciones activas ($\alpha \neq 0$) : 
+     
+
+$$\hat{v_j}=v_{j}(z_{est})+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m).\left\{\begin{matrix}j\in J_v^+ \quad \alpha \nabla_{y} v_j(x, y)&=&0\\ j\in (J_v^+)^c\quad
      \alpha  \nabla_{y} v_j(x, y)-\gamma_j&=&0
-    \end{matrix}  \right.$$
-
-    -   Para $\alpha \neq 0$
-
--   Garantizar que el punto en $\hat{v_j}$ es factible. $$v_{j}^{\star}(x,y)=v_{j}(x,y)+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m)+c_j^v   \left\{\begin{matrix}j\in J_v^+ \\ j\in J_v^0\\j\in J_l^+
     \end{matrix}  \right.
-    $$
+    
+$$
 
--   Modificar la función objetivo: $$f^{\star}(x,y)=f(x,y)+\vec{bf}y \text{  KKT nivel inferior}$$
+   
+-   Garantizar que el punto en $\hat{v_j}$ es factible. 
+$$
+v_{j}^{\star}(x,y)=v_{j}(x,y)+ ({\vec{b_j}}^T)\cdot (y_1,y_2,\dots,y_m)+c_j^v   \left\{\begin{matrix}j\in J_v^+ \\ j\in J_v^0\\j\in J_l^+
+    \end{matrix}  \right.
+$$
+
+-   Modificar la función objetivo: 
+$$f^{\star}(x,y)=f(x,y)+\vec{bf}y$$
+                                 KKT nivel inferior
 
 ------------------------------------------------------------------------
 
 ### Transformaciones en el nivel superior.
 
--   Garantizar que el punto es factible en $g_{i}$: $$g_{i}^{\star}(x,y)=g_{i}(x,y)+c_i^g$$
+- Garantizar que el punto es factible en $g_{i}$: 
+$$
+g_{i}^{\star}(x,y)=g_{i}(x,y)+c_i^g
+$$
 
--   Modificar la función objetivo: $$F^{\star}(x,y)=F(x,y)+\vec{BF}(x,y)^T$$
+- Modificar la función objetivo: 
+$$
+F^{\star}(x,y)=F(x,y)+\vec{BF}(x,y)^T
+$$
 
 ------------------------------------------------------------------------
 
@@ -355,7 +267,7 @@ La salida del generador son las funciones:
 
 -   Valor de la función objetivo evaluada en el punto estacionario inicial vs el punto óptimo computado por los métodos anteriores.
 -   Velocidad del método
-
+---
 # 3. Resultados:
 
 ## Problemas cuadráticos:
@@ -366,7 +278,7 @@ La salida del generador son las funciones:
 
 -   Dificultades de Big-M.
 
-
+---
 # 4. Conclusiones
 
 - Generador de Problemas
@@ -377,7 +289,7 @@ La salida del generador son las funciones:
     - Punto estacionario inicial menos complejo.
     - Dificultad de los algoritmos en los problemas No Convexos.
 
-
+---
 # 5. Recomendaciones
 
 - Ampliar la experimentación:
@@ -385,7 +297,7 @@ La salida del generador son las funciones:
     - Métodos de solución
 
 - Perfeccionar interfaz gráfica.
-
+---
 # 6. Oponencia
 
 ------------------------------------------------------------------------
@@ -427,9 +339,9 @@ La salida del generador son las funciones:
 
 #### En modelos de aprendizajes automáticos (Dempe 2020).
 
-::: {style="background-color: white;"}
+
 ![En apredizaje automático](mlbilevel.png)
-:::
+
 ---
 
 $$
@@ -447,7 +359,7 @@ $$
 ## ¿En qué medida considera se cumplieron los objetivos que se plantea el trabajo?
 
 -   *Objetivo* : desarrollar un generador de problemas que, dado un punto y las funciones que definen un problema de dos niveles, agregarles funciones polinomiales de primer o segundo grado de forma tal que el punto inicial dado sea un punto crítico del problema creado.
-
+---
 ## Comente un poco acerca de los resultados obtenidos, su alcance e importancia.
 
 -   Un caso en el vector de multiplicadores asociados al Langragiano $=0$.
@@ -458,7 +370,7 @@ $$
 
     -   Algoritmos de suavización
     -   Genera problemas puntos conocidos a los cuales converga
-
+---
 -   
 
     ## Poner los graficos de los C, M, Fuerte y alpha explicar
