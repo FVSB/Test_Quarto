@@ -18,6 +18,7 @@
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     width: 150px;
+    transform: translate(0, -30%); /* Sube el div */
   }
   
   /* Estilo para el título principal */

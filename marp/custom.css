@@ -1,0 +1,14 @@
+.centered-image {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Estilo para el logo */
+  .logo {
+    display: block; /* Asegura que el logo sea un elemento en bloque */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: 150px;
+  }

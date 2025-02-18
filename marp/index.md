@@ -8,6 +8,21 @@ lang: es
 header: "Universidad de La Habana - Facultad de Matemática y Computación"
 footer: "Francisco Vicente Suárez Bellón | Tesis de Licenciatura en Ciencia de la Computación"
 backgroundImage: url('https://marp.app/assets/hero-background.jpg')
+style: ./custom.css
+---
+![](uh_logo.png)
+
+# Facultad de Matemática y Computación
+
+#### **Autor**: Francisco Vicente Suárez Bellón
+
+##### **Tutora**: Dr. C. Gemayqzel Bouza Allende
+
+
+---
+# Título:
+## Un generador de problemas prueba para evaluarla calidad de la solución de los algoritmos de problemas de optimización de dos niveles.
+
 ---
 
 # 1. Introducción
@@ -54,6 +69,7 @@ $$
 
 
 
+---
 
 # 2. Marco Teórico
 
@@ -61,9 +77,9 @@ $$
 
 ## Principales usos de los problemas binivel en la literatura:
 
--   Mercado Eléctrico (Aussel 2017, Taylor and Francis)
--   Ecoparques industriales (Ramos 2016, Comput. Chem. Eng.)
--   Ajuste de hiperparámetros en entrenamiento de machine learning (Okuno, T 2020, Springer)
+-   Mercado Eléctrico. (Aussel 2017, Taylor and Francis)
+-   Ecoparques industriales. (Ramos 2016, Comput. Chem. Eng.)
+-   Ajuste de hiperparámetros en entrenamiento de Aprendizaje Automático. (Okuno, T 2020, Springer)
 
 ------------------------------------------------------------------------
 
@@ -117,7 +133,7 @@ $$
 \text{s.t.} &\quad \begin{matrix} g_i(z)& \leq& 0, &i=1,\ldots,q, \\ h_k(z) &=& 0,&k=1\ldots,m, \\
  G_j(z) &\geq& 0, & j=1,\ldots,s,& H_j(z) &\geq& 0, & j=1,\ldots,s, \end{matrix}
 \\&G_j(z)^T H_j(z) = 0,\; j=1,\ldots,s. \\
-&\text{Definición de MPEC} \\
+
 \end{aligned}  
 %\tag{\theequation} 
 \end{equation}
@@ -135,7 +151,7 @@ $$
 
 -   **Fuertemente Estacionario**:
 ---
-### Condiciones de KKT para el MPEC del problema binivel.
+### Condiciones de KKT para el MPEC del problema binivel:
 
 $$
 \begin{matrix}
@@ -143,11 +159,12 @@ $$
  \alpha  \nabla_{y} v_j(x, y)-\gamma_j&=&0\end{matrix}
 $$ 
 
-## Condiciones de complementariedad
----
-## Condiciones de factibilidad
+#### Condiciones de complementariedad
+#### Condiciones de factibilidad
 
-#### Para binivel reformulado
+---
+
+## Tipos puntos estacionarios (Binivel reformulado).
 
 -   **C-Estacionario**:
 
@@ -169,11 +186,11 @@ $$
 -   Lenguaje de programación:
     1.  **Julia**
 -   Bibliotecas:
-    1.  Symbolics
-    2.  LinearAlgebra
+    1.  **Symbolics**
+    2.  **LinearAlgebra**
 -   Bibliotecas para hallar óptimos:
-    1.  BilevelJuMP
-    2.  JuMP
+    1.  **BilevelJuMP**
+    2.  **JuMP**
 
 ------------------------------------------------------------------------
 
@@ -249,8 +266,12 @@ La salida del generador son las funciones:
 -   M-Estacionario.
 -   Fuertemente-Estacionario.
 -   $\alpha=0$
+---
+#### Diagrama de la experimentación
 
-------------------------------------------------------------------------
+![](diagrama_generaciíon_experimentos.svg)
+
+---
 
 3.  Computar con los algoritmos de Julia los mínimos por cada problemas perturbado:
 
@@ -328,7 +349,7 @@ La salida del generador son las funciones:
 
 ---
 
-####   Mercados eléctricos de "pay-as-bid".
+####   Mercados eléctricos de "pay-as-bid":
 
 
 ![Diagrama Mercado Eléctrico pay-as-bid](ElectricPaid_as_bid.drawio.svg)
@@ -337,12 +358,14 @@ La salida del generador son las funciones:
 ---
 
 
-#### En modelos de aprendizajes automáticos (Dempe 2020).
+#### En modelos de aprendizajes automáticos (Dempe 2020):
 
 
 ![En apredizaje automático](mlbilevel.png)
 
 ---
+
+### Modelo propuesto:
 
 $$
 \min_{w_{\lambda}, \lambda} g_{val}(w_{\lambda})
@@ -358,7 +381,7 @@ $$
 
 ## ¿En qué medida considera se cumplieron los objetivos que se plantea el trabajo?
 
--   *Objetivo* : desarrollar un generador de problemas que, dado un punto y las funciones que definen un problema de dos niveles, agregarles funciones polinomiales de primer o segundo grado de forma tal que el punto inicial dado sea un punto crítico del problema creado.
+-   *Objetivo* : Desarrollar un generador de problemas que, dado un punto y las funciones que definen un problema de dos niveles, agregarles funciones polinomiales de primer o segundo grado de forma tal que el punto inicial dado sea un punto crítico del problema creado.
 ---
 ## Comente un poco acerca de los resultados obtenidos, su alcance e importancia.
 
@@ -371,6 +394,22 @@ $$
     -   Algoritmos de suavización
     -   Genera problemas puntos conocidos a los cuales converga
 ---
--   
+ 
+ #### C-Estacionarios
+
+ ![Comportamiento de los puntos C-Estacionarios](x_dot_y_tau_igual_0.png)
 
     ## Poner los graficos de los C, M, Fuerte y alpha explicar
+
+---- 
+
+#### M-Estacionarios
+
+<!-- _class: centered-image -->
+![Comportamiento de los puntos M-Estacionarios](Tipo_M_tau_tendiendo_a_cero.png)
+
+----
+
+#### Fuertemente-Estacionarios
+<!-- _class: centered-image -->
+![Comportamiento de los puntos Fuertemente-Estacionarios](f_estacionario.png)
